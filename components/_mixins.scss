@@ -1,6 +1,6 @@
 // ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~
 
-//	Functions							 			   
+//  Functions                      
 
 // ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~
 
@@ -13,7 +13,7 @@
 // REF: http://www.lukew.com/ff/entry.asp?1167
 // USE: width: resp(300px);
 @function resp($target, $context: 960){
-	@return percentage($target / $context); 
+  @return percentage($target / $context); 
 }
 
 // Em Calculator
@@ -99,7 +99,7 @@ $prefix-for-spec:      true !default; // required for keyframe mixin
 
 // ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~
 
-//	Helpers							 			   
+//  Helpers                      
 
 // ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~
 
@@ -132,8 +132,8 @@ $prefix-for-spec:      true !default; // required for keyframe mixin
 // WHY: It's repetitive. Saves re-writing of multiple rules.
 // USE: @include resp-img;
 @mixin resp-img {
-	width: 100%;
-	max-width: 100%; 
+  width: 100%;
+  max-width: 100%; 
 }
 
 // Content
@@ -143,7 +143,7 @@ $prefix-for-spec:      true !default; // required for keyframe mixin
 // This mixin includes the difficult-to-recall cross-browser character code for "blank". 
 // USE: @include content;
 @mixin content($content: \0020) {
-	content: "#{$content}";
+  content: "#{$content}";
 }
 
 // Hide Text
@@ -166,7 +166,7 @@ $prefix-for-spec:      true !default; // required for keyframe mixin
 // USE: @include trans;
 // USE: @include trans(.1s, opacity, linear);
 @mixin trans($time: .2s, $property: all, $timing-function: ease-in) {
-	@include single-transition(#{$property}, #{$time}, #{$timing-function}, false);
+  @include single-transition(#{$property}, #{$time}, #{$timing-function}, false);
 }
 
 // User Select
@@ -193,10 +193,10 @@ $prefix-for-spec:      true !default; // required for keyframe mixin
 // WHY: Hard to remember attribute combo. Helpful in responsive layouts.
 // USE: @include reset-clearfix;
 @mixin reset-clearfix {
-	&:after {
-		display: initial;
-		clear: none;
-	}
+  &:after {
+    display: initial;
+    clear: none;
+  }
 }
 
 
@@ -274,14 +274,14 @@ $prefix-for-spec:      true !default; // required for keyframe mixin
 }
 
 @function black($amt : 50){
-	$pct : ($amt / 100);
-	$pct : 1 - $pct;
-	@return rgb(255 * $pct, 255 * $pct, 255*$pct);
+  $pct : ($amt / 100);
+  $pct : 1 - $pct;
+  @return rgb(255 * $pct, 255 * $pct, 255*$pct);
 }
 
 @function white($amt : 50){
-	$pct : ($amt / 100);
-	@return rgb(255 * $pct, 255 * $pct, 255*$pct);
+  $pct : ($amt / 100);
+  @return rgb(255 * $pct, 255 * $pct, 255*$pct);
 }
 
 
@@ -291,14 +291,14 @@ $prefix-for-spec:      true !default; // required for keyframe mixin
 // WHY: It's a lot to write and remember all these characteristics
 // USE: @include input-default;
 @mixin input-default {
-	border: 0;
-	background-color: transparent;
-	@include box-shadow(none);
-	@include border-radius(0);
-	-webkit-appearance: none;
-	&:focus {
-		outline: 0;
-	}
+  border: 0;
+  background-color: transparent;
+  @include box-shadow(none);
+  @include border-radius(0);
+  -webkit-appearance: none;
+  &:focus {
+    outline: 0;
+  }
 }
 
 
@@ -309,33 +309,33 @@ $prefix-for-spec:      true !default; // required for keyframe mixin
 // Plus CSS triangles are really flexible and awesome.
 // USE: @include triangle(right, 6px, #000, .68);
 @mixin triangle($tri-orientation: down, $tri-width: 3px, $tri-color: #666, $mult:1) {
-	@include rotate(.1deg);
-	
-	@if $tri-orientation == "up" or $tri-orientation == "top" {
-		border-left: $tri-width*$mult solid transparent;
-		border-right: $tri-width*$mult solid transparent;
-		border-bottom: $tri-width solid $tri-color;
-	}
+  @include rotate(.1deg);
+  
+  @if $tri-orientation == "up" or $tri-orientation == "top" {
+    border-left: $tri-width*$mult solid transparent;
+    border-right: $tri-width*$mult solid transparent;
+    border-bottom: $tri-width solid $tri-color;
+  }
 
-	@if $tri-orientation == "down" or $tri-orientation == "bottom" {
-		border-left: $tri-width*$mult solid transparent;
-		border-right: $tri-width*$mult solid transparent;
-		border-top: $tri-width solid $tri-color;
-	}
+  @if $tri-orientation == "down" or $tri-orientation == "bottom" {
+    border-left: $tri-width*$mult solid transparent;
+    border-right: $tri-width*$mult solid transparent;
+    border-top: $tri-width solid $tri-color;
+  }
 
-	@if $tri-orientation == "left" {
-		border-top: $tri-width*$mult solid transparent;
-		border-bottom: $tri-width*$mult solid transparent;
-		border-right: $tri-width solid $tri-color;
-		border-left:0px solid transparent;
-	}
+  @if $tri-orientation == "left" {
+    border-top: $tri-width*$mult solid transparent;
+    border-bottom: $tri-width*$mult solid transparent;
+    border-right: $tri-width solid $tri-color;
+    border-left:0px solid transparent;
+  }
 
-	@if $tri-orientation == "right" {
-		border-top: $tri-width*$mult solid transparent;
-		border-bottom: $tri-width*$mult solid transparent;
-		border-left: $tri-width solid $tri-color;
-		border-right:0px solid transparent;
-	}
+  @if $tri-orientation == "right" {
+    border-top: $tri-width*$mult solid transparent;
+    border-bottom: $tri-width*$mult solid transparent;
+    border-left: $tri-width solid $tri-color;
+    border-right:0px solid transparent;
+  }
 }
 
 // Absolute Positioning
@@ -394,11 +394,62 @@ $prefix-for-spec:      true !default; // required for keyframe mixin
 }
 
 @mixin unabsolute {
-	position: static;
-	top: auto;
-	right: auto;
-	bottom: auto;
-	left: auto;
+  position: static;
+  top: auto;
+  right: auto;
+  bottom: auto;
+  left: auto;
+}
+
+// Fixed Positioning
+// ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ 
+// FOR: Quickly setting the top, right, left, and bottom positions of a fixed positioned element
+// WHY: It's verbose to write everytime in CSS
+// USE: @include fixed(0 0 10px 0);
+@mixin fixed($coordinates: n n n n) {
+
+  $top: nth($coordinates, 1);
+  $right: nth($coordinates, 2);
+  $bottom: nth($coordinates, 3);
+  $left: nth($coordinates, 4);
+
+  position: fixed;
+
+  // Print nothing if we write an "n" or "none"
+  @if $top == n or $top == none {
+  }
+  @else {
+    top: $top;
+  }
+
+  // Print nothing if we write an "n" or "none"
+  @if $right == n or $right == none {
+  }
+  @else {
+    right: $right;
+  }
+
+  // Print nothing if we write an "n" or "none"
+  @if $bottom == n or $bottom == none{
+  }
+  @else {
+    bottom: $bottom;
+  }
+
+  // Print nothing if we write an "n" or "none"
+  @if $left == n or $left == none {
+  }
+  @else {
+    left: $left;
+  }
+}
+
+@mixin unfixed {
+  position: static;
+  top: auto;
+  right: auto;
+  bottom: auto;
+  left: auto;
 }
 
 // Psuedo
@@ -420,9 +471,9 @@ $prefix-for-spec:      true !default; // required for keyframe mixin
 // WHY: It's hard to recall using this combination of attributes
 // USE: @include ellipsis;
 @mixin ellipsis {
-	overflow: hidden;
-	text-overflow: ellipsis;
-	white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
 }
 
 // Placeholder
@@ -469,27 +520,27 @@ $placeholders: '-webkit-input-placeholder',
 // because selectors cannot be combined. Also a cross-browser solution.
 // USE: @include placholder(#999, #999, #222);
 @mixin placeholder-state($default: inherit, $hover: $default, $focus: $default){
-	// You have to declare these separately in order to work
-	&::-webkit-input-placeholder {
-	    color: $default;
-	}
-	&:-moz-placeholder {
-	    color: $default;
-	}
-	&:hover::-webkit-input-placeholder {
-	    color: $hover;
-	}
-	&:hover:-moz-placeholder {
-	    color: $hover;
-	}
-	&:focus::-webkit-input-placeholder {
-	    color: $focus;
-	}
-	&:focus:-moz-placeholder {
-	    color: $focus;
-	}
+  // You have to declare these separately in order to work
+  &::-webkit-input-placeholder {
+      color: $default;
+  }
+  &:-moz-placeholder {
+      color: $default;
+  }
+  &:hover::-webkit-input-placeholder {
+      color: $hover;
+  }
+  &:hover:-moz-placeholder {
+      color: $hover;
+  }
+  &:focus::-webkit-input-placeholder {
+      color: $focus;
+  }
+  &:focus:-moz-placeholder {
+      color: $focus;
+  }
 }
-	
+  
 
 // SVG Fallback Pattern
 // ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~
@@ -536,38 +587,38 @@ $placeholders: '-webkit-input-placeholder',
 // USE: @include rgba-bg(black, .5);
 
 @mixin rgba-bg($color: white, $alpha: .1) {
-	// Strip units from alpha in case user tries to pass a percentage ...
-	$alpha: strip-units($alpha);
-	@if $alpha > 1 {
-		$alpha: $alpha * .01;
-	}
+  // Strip units from alpha in case user tries to pass a percentage ...
+  $alpha: strip-units($alpha);
+  @if $alpha > 1 {
+    $alpha: $alpha * .01;
+  }
 
-	// Turn decimal into whole number for use with fallback
-	$a-integer: $alpha * 100;
+  // Turn decimal into whole number for use with fallback
+  $a-integer: $alpha * 100;
 
-	// Set fallback background image, including path 
-	$fallback-bg: '#{$rgba-bg-path}#{$color}-#{$a-integer}' + '.png';
+  // Set fallback background image, including path 
+  $fallback-bg: '#{$rgba-bg-path}#{$color}-#{$a-integer}' + '.png';
 
-	@if $color == transparent {
-		background-color: transparent;
-		.no-rgba & {
-			background-color: transparent;
-		}
-	}
-	@else {
-		background-color: $color;
+  @if $color == transparent {
+    background-color: transparent;
+    .no-rgba & {
+      background-color: transparent;
+    }
+  }
+  @else {
+    background-color: $color;
 
-		@if $color == white or $color == #fff or $color == #ffffff  {
-			background-color: rgba(255,255,255,$alpha);
-		}
-		@else {
-			background-color: rgba(0,0,0,$alpha);
-		}
+    @if $color == white or $color == #fff or $color == #ffffff  {
+      background-color: rgba(255,255,255,$alpha);
+    }
+    @else {
+      background-color: rgba(0,0,0,$alpha);
+    }
 
-		.no-rgba & {
-			background: transparent image-url(#{$fallback-bg}) 50% 50% repeat;
-		}
-	}
+    .no-rgba & {
+      background: transparent image-url(#{$fallback-bg}) 50% 50% repeat;
+    }
+  }
 }
 
 
@@ -578,13 +629,13 @@ $placeholders: '-webkit-input-placeholder',
 // WHY: Who wants to write this same six lines of code over and over?
 // USE: @include fout;
 @mixin fout {
-	.wf-loading & {
-		visibility: hidden;
-	}
-	.wf-active &,
-	.wf-inactive & {
-		visibility: visible;
-	}	
+  .wf-loading & {
+    visibility: hidden;
+  }
+  .wf-active &,
+  .wf-inactive & {
+    visibility: visible;
+  } 
 }
 
 // Retina Background Images
@@ -601,8 +652,8 @@ $placeholders: '-webkit-input-placeholder',
          (min-device-pixel-ratio: 1.1),
          (min-resolution: 96dpi) {
     // on retina, use image that's scaled by 2
-	background-image: $image;
-	@include background-size($width $height);
+  background-image: $image;
+  @include background-size($width $height);
   }
 }
 
@@ -616,12 +667,12 @@ $placeholders: '-webkit-input-placeholder',
 
 @mixin video($aspect: wide) {
 
-	@if $aspect == wide or $aspect == cinema or $aspect == 16/9 {
-		$aspect: 56.25%;
-	}
-	@else if $aspect == tv or $aspect == 4/3 {
-		$aspect: 75%;
-	}
+  @if $aspect == wide or $aspect == cinema or $aspect == 16/9 {
+    $aspect: 56.25%;
+  }
+  @else if $aspect == tv or $aspect == 4/3 {
+    $aspect: 75%;
+  }
 
     position: relative;
     padding-bottom: $aspect;
@@ -748,7 +799,7 @@ $placeholders: '-webkit-input-placeholder',
 
 @mixin keyframes($name) {
   @-webkit-keyframes $name {
-	@content;
+  @content;
   }
   @-moz-keyframes $name {
     @content;
@@ -760,7 +811,7 @@ $placeholders: '-webkit-input-placeholder',
 
 // ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~
 //
-// Sprites	
+// Sprites  
 //
 // ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~
 
@@ -788,40 +839,40 @@ $placeholders: '-webkit-input-placeholder',
 // @include all-retina-sprites; 
 
 // .sprite-sprite {
-// 	@include retina($retina-sprites, 8px, 10px);		
+//  @include retina($retina-sprites, 8px, 10px);    
 // }
 
 
 
 // ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~
 //
-// Paul Irish HTML5 Helpers	
+// Paul Irish HTML5 Helpers 
 //
 // ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~
 
 // Image replacement
 @mixin ir { 
-	display: block; 
-	text-indent: -999em; 
-	overflow: hidden; 
-	background-repeat: no-repeat; 
-	text-align: left; 
-	direction: ltr; 
+  display: block; 
+  text-indent: -999em; 
+  overflow: hidden; 
+  background-repeat: no-repeat; 
+  text-align: left; 
+  direction: ltr; 
 }
 
 // Hide for both screenreaders and browsers
 //   css-discuss.incutio.com/wiki/Screenreader_Visibility
 @mixin hidden { 
-	display: none; 
-	visibility: hidden; 
+  display: none; 
+  visibility: hidden; 
 } 
 
 // Hide only visually, but have it available for screenreaders 
 //   www.webaim.org/techniques/css/invisiblecontent/  &  j.mp/visuallyhidden
 @mixin visuallyhidden { 
-	position: absolute !important;
-	clip: rect(1px 1px 1px 1px); /* IE6, IE7 */
-	clip: rect(1px, 1px, 1px, 1px); 
+  position: absolute !important;
+  clip: rect(1px 1px 1px 1px); /* IE6, IE7 */
+  clip: rect(1px, 1px, 1px, 1px); 
 }
 
 // Extends the .visuallyhidden class to allow the element to be focusable when navigated to via the keyboard: drupal.org/node/897638
@@ -830,5 +881,5 @@ $placeholders: '-webkit-input-placeholder',
 
 // Hide visually and from screenreaders, but maintain layout
 @mixin invisible { 
-	visibility: hidden; 
+  visibility: hidden; 
 }
