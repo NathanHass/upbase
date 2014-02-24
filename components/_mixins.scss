@@ -415,29 +415,41 @@ $prefix-for-spec:      true !default; // required for keyframe mixin
 
   position: fixed;
 
+  @if $top == auto or $top == a {
+    top: auto;
+  }
   // Print nothing if we write an "n" or "none"
-  @if $top == n or $top == none {
+  @else if $top == n or $top == none {
   }
   @else {
     top: $top;
   }
 
+  @if $right == auto or $right == a {
+    right: auto;
+  }
   // Print nothing if we write an "n" or "none"
-  @if $right == n or $right == none {
+  @else if $right == n or $right == none {
   }
   @else {
     right: $right;
   }
 
+  @if $bottom == auto or $bottom == a {
+    bottom: auto;
+  }
   // Print nothing if we write an "n" or "none"
-  @if $bottom == n or $bottom == none{
+  @else if $bottom == n or $bottom == none{
   }
   @else {
     bottom: $bottom;
   }
 
+  @if $left == auto or $left == a {
+    left: auto;
+  }
   // Print nothing if we write an "n" or "none"
-  @if $left == n or $left == none {
+  @else if $left == n or $left == none {
   }
   @else {
     left: $left;
